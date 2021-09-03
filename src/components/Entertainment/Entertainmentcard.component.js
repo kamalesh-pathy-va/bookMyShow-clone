@@ -1,5 +1,67 @@
 import React from "react";
 import Slider from "react-slick";
+import {BiChevronRight, BiChevronLeft} from "react-icons/bi"
+import { IconContext } from "react-icons";
+
+function NextArrow(props) {
+	return (
+		<>
+			<div
+				className="slick-arrow"
+				style={{...props.style,
+					display:"block",
+					backgroundColor:"#666666",
+					width:"40px",
+					height:"40px",
+					position:"absolute",
+					right:"0",
+					top:"0",
+					transform:"translateY(130px)",
+					borderRadius:"50%",
+					fontSize:"40px",
+					zIndex:"2"
+				}}
+				onClick={props.onClick}
+			>
+				<IconContext.Provider value={{color:"white", className:"global-class-name"}}>
+					<div>
+						<BiChevronRight />
+					</div>
+				</IconContext.Provider>
+			</div>
+		</>
+	);
+}
+
+function PrevArrow(props) {
+	return (
+		<>
+			<div
+				className="slick-arrow"
+				style={{...props.style,
+					display:"block",
+					backgroundColor:"#666666",
+					width:"40px",
+					height:"40px",
+					position:"absolute",
+					left:"0",
+					top:"0",
+					transform:"translateY(130px)",
+					borderRadius:"50%",
+					fontSize:"40px",
+					zIndex:"2"
+				}}
+				onClick={props.onClick}
+			>
+				<IconContext.Provider value={{color:"white", className:"global-class-name"}}>
+					<div>
+						<BiChevronLeft />
+					</div>
+				</IconContext.Provider>
+			</div>
+		</>
+	);
+}
 
 const EntertainmentCard = (props) => {
   return (
@@ -34,7 +96,9 @@ const EntertainmentCardSlider = () => {
     autoplay: false,
     slidesToShow: 4,
     slidesToScroll: 4,
-    InitialSlide: 0
+    InitialSlide: 0,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
   }
 
   return (

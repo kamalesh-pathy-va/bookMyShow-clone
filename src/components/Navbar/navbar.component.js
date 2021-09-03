@@ -39,7 +39,7 @@ const NavLg = () => {
 			<div className="flex items-center w-3/5">
 				<div className="w-12 h-12 mr-5">
 					{/*<img src="https://clipground.com/images/book-my-show-logo-png-9.png" alt="logo" className="w-full h-full" />*/}
-					<img src="./logo1.png" alt="logo" className="w-full h-full" />
+					<img src="https://github.com/kamalesh-pathy-va/bookMyShow-clone/blob/main/src/components/Navbar/logoBMS.png?raw=true" alt="logo" className="w-full h-full" />
 				</div>
 				<div className="w-full flex items-center bg-white gap-3 px-3 py-1 m-1.5 mb-0.5 rounded-sm">
 					<BiSearch />
