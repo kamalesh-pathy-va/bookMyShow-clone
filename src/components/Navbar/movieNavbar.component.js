@@ -1,6 +1,6 @@
 import React from "react";
 
-import {  BiChevronRight, BiSearch, BiChevronDown, BiMenu } from "react-icons/bi";
+import {  BiChevronRight, BiSearch, BiChevronDown, BiMenu, BiChevronLeft, BiShareAlt } from "react-icons/bi";
 
 const NavSm = () => {
 	return (
@@ -8,28 +8,14 @@ const NavSm = () => {
     <div className="text-white flex items-center justify-between">
     <div>
 	<h3 className="text-xl font-bold">It All Starts Here!</h3>
-	<span className="text-gray-400 text-xs flex items-center">
-	Chennai <BiChevronRight />
-	</span>
     </div>
     <div className="w-8 h-8">
-    <BiSearch className="w-full h-full" />
+    <BiShareAlt className="w-full h-full" />
     </div>
     </div>
     </>
   )
 
-};
-
-const NavMd = () => {
-	return (
-		<>
-			<div className="w-full flex items-center bg-white gap-3 px-3 py-2 m-1.5 mb-0.5 rounded-sm">
-				<BiSearch />
-				<input type="search" className="w-full focus:outline-none" placeholder="Search for Movies, Events, Plays, Sports and Activities"/>
-			</div>
-		</>
-	)
 };
 
 const NavLg = () => {
@@ -38,7 +24,6 @@ const NavLg = () => {
 		<div className="container w-4/5 mx-auto px-4 flex items-center justify-between">
 			<div className="flex items-center w-3/5">
 				<div className="w-32 mr-5">
-					{/*<img src="https://clipground.com/images/book-my-show-logo-png-9.png" alt="logo" className="w-full h-full" />*/}
 					<img src="https://github.com/kamalesh-pathy-va/bookMyShow-clone/blob/main/src/components/Navbar/logoBMS.png?raw=true" alt="logo" className="w-full h-full" />
 				</div>
 				<div className="w-full flex items-center bg-white gap-3 px-3 py-1 m-1.5 mb-0.5 rounded-sm">
@@ -61,16 +46,16 @@ const NavLg = () => {
 	);
 };
 
-const Navbar = () => {
+const MovieNavbar = () => {
 	return (
 		<>
-			<nav className="bg-navCol-700 px-4 py-2">
+			<nav className="absolute inset-x-0 z-30 bg-opacity-10 backdrop-filter backdrop-blur-lg lg:relative bg-navCol-800 px-4 py-2">
 				<div className="md:hidden">{
 					<NavSm />
 				}</div>
-				<div className="hidden lg:hidden md:flex">{
+				<div className="hidden lg:hidden md:block">{
 					/*Tablet View*/
-					<NavMd />
+					<NavSm />
 				}</div>
 				<div className="hidden lg:flex">{
 					/*Desktop View*/
@@ -81,4 +66,4 @@ const Navbar = () => {
 	);
 };
 
-export default Navbar;
+export default MovieNavbar;

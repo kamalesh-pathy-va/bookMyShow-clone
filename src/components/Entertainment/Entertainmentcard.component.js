@@ -16,7 +16,7 @@ function NextArrow(props) {
 					position:"absolute",
 					right:"0",
 					top:"0",
-					transform:"translateY(130px)",
+					transform:`translateY(${props.pos})`,
 					borderRadius:"50%",
 					fontSize:"40px",
 					zIndex:"2"
@@ -46,7 +46,7 @@ function PrevArrow(props) {
 					position:"absolute",
 					left:"0",
 					top:"0",
-					transform:"translateY(130px)",
+					transform:`translateY(${props.pos})`,
 					borderRadius:"50%",
 					fontSize:"40px",
 					zIndex:"2"
@@ -97,8 +97,31 @@ const EntertainmentCardSlider = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     InitialSlide: 0,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    nextArrow: <NextArrow pos="140px"/>,
+    prevArrow: <PrevArrow pos="140px"/>,
+    responsive: [
+		{
+			breakpoint: 1024,
+			settings: {
+				nextArrow: <NextArrow pos="80px"/>,
+    		prevArrow: <PrevArrow pos="80px"/>
+			}
+		},
+		{
+			breakpoint: 600,
+			settings: {
+				nextArrow: <NextArrow pos="30px"/>,
+    		prevArrow: <PrevArrow pos="30px"/>
+			}
+		},
+		{
+			breakpoint: 400,
+			settings: {
+				nextArrow: <NextArrow pos="20px"/>,
+    		prevArrow: <PrevArrow pos="20px"/>
+			}
+		}
+	]
   }
 
   return (
