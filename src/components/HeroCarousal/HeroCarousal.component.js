@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import HeroSlider from "react-slick";
+import axios from "axios";
 
 //Components
 import {NextArrowLg, PrevArrowLg, NextArrow, PrevArrow} from "./Arrows.component";
@@ -9,6 +10,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroCarousal = () => {
+	const [images, setImages] = useState([]);
+
+	useEffect(() => {
+		const requestNowPlayingMovies = async() => {
+			const getImages = await axios.get("/movie/now_playing");
+			console.log(getImages);
+		};
+		requestNowPlayingMovies();
+	}, []);
+
 	const settingsLg = {
 		arrows: true,
 		autoplay: true,
@@ -32,13 +43,6 @@ const HeroCarousal = () => {
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />
 	};
-	const images = [
-		"https://unsplash.it/950/500",
-		"https://unsplash.it/950/501",
-		"https://unsplash.it/950/499",
-		"https://unsplash.it/951/500",
-		"https://unsplash.it/849/500"
-	];
 
 	return (
 		<>
