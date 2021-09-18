@@ -5,6 +5,22 @@ import {BiChevronRight, BiShareAlt} from "react-icons/bi"
 
 
 const MovieHero = () => {
+	const launchRazorPay = () => {
+		let options = {
+			key: "rzp_test_wrjxKVapo3Ud4B",
+			amount: 500*100,
+			currency: "INR",
+			name: "Book My Show Clone",
+			description: "Movie purchase or Rental",
+			image: "",
+			handler: () => {
+				alert("Payment Successful!")
+			},
+			theme: {color: "#c4242d"}
+		};
+		let rzp = new window.Razorpay(options);
+		rzp.open();
+	}
 	return (
 		<>
 	{/*For small Screen*/}
@@ -94,7 +110,7 @@ const MovieHero = () => {
 							<h2 className="font-semibold text-white">2h 12m • Action, Adventure, Fantasy • UA • 3 Sep, 2021</h2>
 						</div>
 						<div>
-							<button className="bg-red-500 px-16 py-4 text-white font-bold rounded-xl">Book Tickets</button>
+							<button onClick={launchRazorPay} className="bg-red-500 px-16 py-4 text-white font-bold rounded-xl">Book Tickets</button>
 						</div>
 					</div>
 					<div className="absolute right-0 top-0 m-5">
