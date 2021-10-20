@@ -21,7 +21,7 @@ const Movie = () => {
 
 				<div className="flex flex-col items-start gap-3">
 					<h2 className="text-gray-800 font-bold text-2xl">Applicable Offers</h2>
-					<div className="flex items-start gap-2 bg-yellow-100 border-yellow-400 border-dashed rounded-md p-3 border-2 w-max">
+					<div className="flex items-start gap-2 bg-yellow-100 border-yellow-400 border-dashed rounded-md p-3 border-2 sm:w-max">
 						<div className="w-6 h-6">
 							<BiCameraMovie className="w-full h-full"/>
 						</div>
